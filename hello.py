@@ -1,4 +1,4 @@
-from flask import Flask,request,render_template
+from flask import Flask,request,render_template,url_for
 app = Flask(__name__)
  
 @app.route('/')
@@ -14,6 +14,14 @@ def index():
 @app.route("/nextpage", methods=["GET"])
 def nextpage():
     return render_template("next_index.html")
+
+@app.route("/temp", methods=["GET"])
+def temp():
+    return render_template("temp.html")
+
+@app.route("/nextpage2", methods=["GET"])
+def nextpage2():
+    return render_template("next_index2.html")
 
 #app.pyをターミナルから直接呼び出した時だけ、app.run()を実行する
 if __name__ == "__main__":
